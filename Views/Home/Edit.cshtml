@@ -1,0 +1,31 @@
+﻿@model FoodBazarManagementSystem.Models.Fruit
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<form asp-action="Edit">
+    <div class="form-group">
+        <label>Food Name</label>
+        <input type="text" asp-for="fruit_name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Food Image</label>
+        <input type="file" asp-for="fruit_img" class="form-control-file" />
+    </div>
+    <div class="form-group">
+        <label>Food Unit</label>
+        <select asp-for="fruit_unit" class="form-control">
+            <option>1 kg</option>
+            <option>1 Piece</option>
+            <option>4 Piece</option>
+            <option>12 Piece</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Food Price</label>
+        <input type="text" asp-for="fruit_price" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Add Food</button>
+</form>
+

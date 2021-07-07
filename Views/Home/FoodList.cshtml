@@ -1,0 +1,33 @@
+﻿@model IEnumerable<FoodBazarManagementSystem.Models.Fruit>
+@{
+    ViewData["Title"] = "FoodList";
+}
+
+<h1>Food List</h1>
+<a asp-action="AddFood"><button class="btn btn-primary">Add Food</button></a>
+<table class="table table-borderless table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Unit</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.fruit_name</td>
+                <td><img src="~/Imgs/@item.fruit_img" class="card-img" style="width: 100px" /></td>
+                <td>@item.fruit_unit</td>
+                <td>@item.fruit_price</td> 
+                <td><a asp-action="Edit" asp-route-id="@item.id"><button class="btn btn-outline-dark">Edit</button></a>
+                <a asp-action="Delete" asp-route-id="@item.id"><button class="btn btn-outline-danger">Delete</button></a></td>
+            </tr>
+        }
+        </tbody>
+</table>

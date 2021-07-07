@@ -1,0 +1,22 @@
+﻿@model IEnumerable<FoodBazarManagementSystem.Models.CustomerFeedback>
+@{
+    ViewData["Title"] = "CustomerFeedback";
+}
+
+<h1>Customer Feedback</h1>
+
+    @foreach(var item in Model)
+    {
+        <div class="card">
+            <div class="card-header" data-toggle="collapse" data-target="#a_@item.id">
+                <strong>Name:</strong>@item.name,
+                <strong>Email:</strong>@item.email <br />
+                <strong>Date:</strong> 03-Mar-2020
+            </div>
+            <div class="card-body collapse" id="a_@item.id">
+                @item.message
+            </div>
+        </div>
+        
+        
+    }        

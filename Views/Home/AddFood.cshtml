@@ -1,0 +1,38 @@
+﻿@model FoodBazarManagementSystem.Models.Fruit
+@{
+    ViewData["Title"] = "Add Food";
+}
+
+<h1>AddFood</h1>
+@{
+    if (ViewData["Exist Fruit"] != null)
+    {
+        <div class="alert alert-primary alert-dismissible fade show">
+            You have already added @ViewData["Exist Fruit"] <a class="close" data-dismiss="alert">&times;</a>
+        </div>
+    }
+}
+<form asp-action="AddFood">
+    <div class="form-group">
+        <label>Food Name</label>
+        <input type="text" asp-for="fruit_name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Food Image</label>
+        <input type="file" asp-for="fruit_img" class="form-control-file" />
+    </div>
+    <div class="form-group">
+        <label>Food Unit</label>
+        <select asp-for="fruit_unit" class="form-control">
+            <option>1 kg</option>
+            <option>1 Piece</option>
+            <option>4 Piece</option>
+            <option>12 Piece</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Food Price</label>
+        <input type="text" asp-for="fruit_price" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Add Food</button>
+</form>
